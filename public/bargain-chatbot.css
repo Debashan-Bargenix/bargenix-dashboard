@@ -1,0 +1,43 @@
+#bargenix-chatbot-container {
+  position: fixed;
+  z-index: 999999;
+  transition: all 0.3s ease;
+  background-color: white;
+  overflow: hidden;
+}
+
+#bargenix-chatbot-container.bargenix-chatbot-hidden {
+  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  #bargenix-chatbot-container {
+    right: 20px;
+    bottom: 20px;
+    width: 380px;
+    max-width: 90vw;
+    height: 500px;
+    max-height: 80vh;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  #bargenix-chatbot-container.bargenix-chatbot-hidden {
+    transform: translateX(100%);
+  }
+}
+
+@media (max-width: 767px) {
+  #bargenix-chatbot-container {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 80vh;
+    max-height: 500px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+  }
+}

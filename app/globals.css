@@ -1,0 +1,673 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 217.2 32.6% 17.5%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 75.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Dark mode specific styles */
+.dark body {
+  @apply bg-slate-900;
+}
+
+/* Card styles */
+.dark .card,
+.dark .dashboard-card {
+  @apply bg-slate-800 border-slate-700 text-slate-100;
+}
+
+/* Button styles */
+.dark .btn,
+.dark button[class*="btn"] {
+  @apply border-slate-700;
+}
+
+.dark .btn-primary {
+  @apply bg-blue-600 hover:bg-blue-700 text-white;
+}
+
+.dark .btn-secondary {
+  @apply bg-slate-700 hover:bg-slate-600 text-white;
+}
+
+.dark .btn-outline {
+  @apply border-slate-600 text-slate-200 hover:bg-slate-700;
+}
+
+/* Input styles */
+.dark input,
+.dark select,
+.dark textarea {
+  @apply bg-slate-800 border-slate-700 text-slate-200;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  @apply text-slate-500;
+}
+
+/* Table styles */
+.dark table {
+  @apply border-slate-700;
+}
+
+.dark table th {
+  @apply bg-slate-800 text-slate-200 border-slate-700;
+}
+
+.dark table td {
+  @apply border-slate-700 text-slate-300;
+}
+
+.dark table tr:hover td {
+  @apply bg-slate-700;
+}
+
+/* Dropdown styles */
+.dark .dropdown-content,
+.dark [class*="dropdown-menu"] {
+  @apply bg-slate-800 border-slate-700;
+}
+
+.dark .dropdown-item,
+.dark [class*="dropdown-menu-item"] {
+  @apply text-slate-200 hover:bg-slate-700;
+}
+
+/* Badge styles */
+.dark .badge {
+  @apply bg-slate-700 text-slate-200;
+}
+
+/* Alert styles */
+.dark .alert {
+  @apply bg-slate-800 border-slate-700 text-slate-200;
+}
+
+/* Tooltip styles */
+.dark .tooltip {
+  @apply bg-slate-800 text-slate-200;
+}
+
+/* Progress bar styles */
+.dark .progress {
+  @apply bg-slate-700;
+}
+
+.dark .progress-value {
+  @apply bg-blue-600;
+}
+
+/* Tabs styles */
+.dark .tabs {
+  @apply border-slate-700;
+}
+
+.dark .tab {
+  @apply text-slate-400 hover:text-slate-200;
+}
+
+.dark .tab-active {
+  @apply text-slate-200 border-blue-500;
+}
+
+/* Sidebar styles */
+.dark .sidebar {
+  @apply bg-slate-900 border-slate-800;
+}
+
+.dark .sidebar-item {
+  @apply text-slate-300 hover:bg-slate-800;
+}
+
+.dark .sidebar-item.active {
+  @apply bg-slate-800 text-white;
+}
+
+/* Header styles */
+.dark .header {
+  @apply bg-slate-900 border-slate-800;
+}
+
+/* Footer styles */
+.dark .footer {
+  @apply bg-slate-900 border-slate-800 text-slate-400;
+}
+
+/* Modal styles */
+.dark .modal {
+  @apply bg-slate-800 border-slate-700;
+}
+
+/* Accordion styles */
+.dark .accordion {
+  @apply border-slate-700;
+}
+
+.dark .accordion-header {
+  @apply bg-slate-800 text-slate-200;
+}
+
+.dark .accordion-content {
+  @apply bg-slate-800 text-slate-300;
+}
+
+/* Specific component overrides */
+.dark .dashboard-stat-card {
+  @apply bg-slate-800 border-slate-700;
+}
+
+.dark .dashboard-stat-value {
+  @apply text-slate-100;
+}
+
+.dark .dashboard-stat-label {
+  @apply text-slate-400;
+}
+
+.dark .activity-item {
+  @apply bg-slate-800 border-slate-700;
+}
+
+.dark .activity-item-icon {
+  @apply bg-slate-700;
+}
+
+.dark .activity-item-text {
+  @apply text-slate-200;
+}
+
+.dark .activity-item-time {
+  @apply text-slate-500;
+}
+
+.dark .search-input {
+  @apply bg-slate-800 border-slate-700 text-slate-200;
+}
+
+.dark .search-results {
+  @apply bg-slate-800 border-slate-700;
+}
+
+.dark .search-result-item {
+  @apply hover:bg-slate-700;
+}
+
+.dark .search-result-title {
+  @apply text-slate-200;
+}
+
+.dark .search-result-description {
+  @apply text-slate-400;
+}
+
+.dark .notification-badge {
+  @apply bg-red-500;
+}
+
+.dark .user-dropdown {
+  @apply bg-slate-800 border-slate-700;
+}
+
+.dark .user-dropdown-item {
+  @apply text-slate-200 hover:bg-slate-700;
+}
+
+.dark .store-connection-card {
+  @apply bg-slate-800 border-slate-700;
+}
+
+.dark .store-connection-status {
+  @apply text-green-400;
+}
+
+.dark .store-connection-domain {
+  @apply text-slate-200;
+}
+
+.dark .store-connection-time {
+  @apply text-slate-400;
+}
+
+.dark .bargain-button-preview {
+  @apply bg-slate-800 border-slate-700;
+}
+
+.dark .color-picker {
+  @apply bg-slate-800 border-slate-700;
+}
+
+.dark .membership-feature-item {
+  @apply bg-slate-800 border-slate-700;
+}
+
+.dark .membership-feature-check {
+  @apply text-green-400;
+}
+
+.dark .membership-feature-text {
+  @apply text-slate-200;
+}
+
+.dark .membership-card {
+  @apply bg-slate-800 border-slate-700;
+}
+
+.dark .membership-card-header {
+  @apply text-slate-100;
+}
+
+.dark .membership-card-price {
+  @apply text-slate-100;
+}
+
+.dark .membership-card-description {
+  @apply text-slate-300;
+}
+
+.dark .membership-card-feature {
+  @apply text-slate-300;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c5c5c5;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Theme transition */
+.theme-transition {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Utility classes for dark mode */
+.dark-bg-slate-800 {
+  @apply dark:bg-slate-800;
+}
+
+.dark-bg-slate-900 {
+  @apply dark:bg-slate-900;
+}
+
+.dark-border-slate-700 {
+  @apply dark:border-slate-700;
+}
+
+.dark-text-slate-200 {
+  @apply dark:text-slate-200;
+}
+
+.dark-text-slate-300 {
+  @apply dark:text-slate-300;
+}
+
+.dark-text-slate-400 {
+  @apply dark:text-slate-400;
+}
+
+/* Membership page specific dark mode styles */
+.dark .membership-plan-card {
+  @apply bg-slate-800 border-slate-700;
+}
+
+.dark .membership-plan-title {
+  @apply text-slate-100;
+}
+
+.dark .membership-plan-price {
+  @apply text-slate-100;
+}
+
+.dark .membership-plan-description {
+  @apply text-slate-400;
+}
+
+.dark .membership-plan-feature {
+  @apply text-slate-300;
+}
+
+.dark .membership-plan-feature-icon {
+  @apply text-green-400;
+}
+
+.dark .membership-history-item {
+  @apply bg-slate-800 border-slate-700;
+}
+
+.dark .membership-history-date {
+  @apply text-slate-400;
+}
+
+.dark .membership-history-event {
+  @apply text-slate-200;
+}
+
+.dark .membership-history-details {
+  @apply text-slate-400;
+}
+
+.dark .membership-usage-bar {
+  @apply bg-slate-700;
+}
+
+.dark .membership-usage-progress {
+  @apply bg-blue-600;
+}
+
+/* Inventory page specific dark mode styles */
+.dark .inventory-stat-card {
+  @apply bg-slate-800 border-slate-700;
+}
+
+.dark .inventory-stat-value {
+  @apply text-slate-100;
+}
+
+.dark .inventory-stat-label {
+  @apply text-slate-400;
+}
+
+.dark .inventory-category-card {
+  @apply bg-slate-800 border-slate-700;
+}
+
+.dark .inventory-category-name {
+  @apply text-slate-200;
+}
+
+.dark .inventory-category-count {
+  @apply text-slate-400;
+}
+
+.dark .inventory-product-row {
+  @apply border-slate-700;
+}
+
+.dark .inventory-product-row:hover {
+  @apply bg-slate-700/50;
+}
+
+.dark .inventory-product-name {
+  @apply text-slate-200;
+}
+
+.dark .inventory-product-category {
+  @apply text-slate-400;
+}
+
+.dark .inventory-product-price {
+  @apply text-slate-300;
+}
+
+.dark .inventory-product-stock {
+  @apply text-slate-300;
+}
+
+.dark .inventory-filter-dropdown {
+  @apply bg-slate-800 border-slate-700;
+}
+
+.dark .inventory-filter-item {
+  @apply text-slate-300 hover:bg-slate-700;
+}
+
+.dark .inventory-search {
+  @apply bg-slate-800 border-slate-700 text-slate-200 placeholder:text-slate-500;
+}
+
+.dark .inventory-pagination {
+  @apply text-slate-300;
+}
+
+.dark .inventory-pagination-item {
+  @apply border-slate-700 hover:bg-slate-700;
+}
+
+.dark .inventory-pagination-active {
+  @apply bg-blue-600 text-white border-blue-600;
+}
+
+/* Shopify page specific dark mode styles */
+.dark .shopify-store-card {
+  @apply bg-slate-800 border-slate-700;
+}
+
+.dark .shopify-store-name {
+  @apply text-slate-100;
+}
+
+.dark .shopify-store-domain {
+  @apply text-slate-300;
+}
+
+.dark .shopify-store-status {
+  @apply text-slate-400;
+}
+
+.dark .shopify-store-status-active {
+  @apply text-green-400;
+}
+
+.dark .shopify-store-status-inactive {
+  @apply text-red-400;
+}
+
+.dark .shopify-store-detail-label {
+  @apply text-slate-400;
+}
+
+.dark .shopify-store-detail-value {
+  @apply text-slate-300;
+}
+
+.dark .shopify-connect-card {
+  @apply bg-slate-800 border-slate-700;
+}
+
+.dark .shopify-connect-title {
+  @apply text-slate-100;
+}
+
+.dark .shopify-connect-description {
+  @apply text-slate-400;
+}
+
+.dark .shopify-connect-input {
+  @apply bg-slate-700 border-slate-600 text-slate-200 placeholder:text-slate-500;
+}
+
+.dark .shopify-button-installer {
+  @apply bg-slate-800 border-slate-700;
+}
+
+.dark .shopify-button-preview {
+  @apply bg-slate-700 border-slate-600;
+}
+
+.dark .shopify-button-settings {
+  @apply bg-slate-800 border-slate-700;
+}
+
+.dark .shopify-button-settings-label {
+  @apply text-slate-300;
+}
+
+.dark .shopify-button-color-picker {
+  @apply bg-slate-700 border-slate-600;
+}
+
+/* Fix for white backgrounds in dark mode */
+.dark [class*="bg-white"] {
+  @apply bg-slate-800;
+}
+
+.dark [class*="text-gray-"] {
+  @apply text-slate-300;
+}
+
+.dark [class*="text-black"] {
+  @apply text-slate-100;
+}
+
+.dark [class*="border-gray-"] {
+  @apply border-slate-700;
+}
+
+/* Fix for specific components */
+.dark .store-connection-indicator {
+  @apply bg-green-900/20 text-green-400 border-green-900/30;
+}
+
+.dark .store-domain-badge {
+  @apply bg-amber-900/20 text-amber-400 border-amber-900/30;
+}
+
+.dark .sync-time-indicator {
+  @apply bg-slate-800 text-slate-300 border-slate-700;
+}
+
+.dark .feature-list-item {
+  @apply bg-slate-800 border-slate-700;
+}
+
+.dark .feature-check-icon {
+  @apply text-green-400;
+}
+
+.dark .feature-text {
+  @apply text-slate-300;
+}
+
+.dark .plan-benefit-card {
+  @apply bg-slate-800 border-slate-700;
+}
+
+.dark .plan-benefit-icon {
+  @apply text-blue-400;
+}
+
+.dark .plan-benefit-title {
+  @apply text-slate-200;
+}
+
+.dark .plan-benefit-description {
+  @apply text-slate-400;
+}
+
+/* Fix for any remaining white backgrounds */
+.dark .bg-white {
+  @apply bg-slate-800;
+}
+
+.dark .from-white {
+  @apply from-slate-800;
+}
+
+.dark .to-white {
+  @apply to-slate-800;
+}
+
+.dark .text-black {
+  @apply text-slate-100;
+}
+
+.dark .border-white {
+  @apply border-slate-700;
+}
